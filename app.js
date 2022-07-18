@@ -21,8 +21,11 @@ app.get('/login', (req, res) => res.sendFile(path.join(viewsPath, 'login.html'))
 //Definir la ruta que responda a GET '/' con la vista register.html
 app.get('/register', (req, res) => res.sendFile(path.join(viewsPath, 'register.html')));
 
-//Definir la ruta que responda a GET '/' con la vista register.html
+//Definir la ruta que responda a GET '/' con la vista productDetail.html
 app.get('/productDetail', (req, res) => res.sendFile(path.join(viewsPath, 'productDetail.html')));
+
+//Definir la ruta que responda a GET '/' con la vista carritoCompras.html
+app.get('/carritoCompras', (req, res) => res.sendFile(path.join(viewsPath, 'carritoCompras.html')));
 
 //Definir el puerto en el que se va a levantar el servidor
 const port = process.env.PORT || 3000
