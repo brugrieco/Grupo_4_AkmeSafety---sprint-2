@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/1a829eb2bf.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Akme Safety | Login</title>
+</head>
+<body>
+    <header>
+        <div class = "top-header">
+            <figure class="logo">
+                <a href="/"><img src="/images/logo-akme-safety.png" alt="logo akme"></a>
+            </figure>
+
+            <form action="#" method="GET">
+                <input type="text" class ="input" placeholder="Buscar productos, marcas y más">
+                <button class="submit"><i class="fa fa-search"></i></button>
+            </form>
+
+            <ul>
+                <li><a href="#"><i class="fa-solid fa-user">Mi cuenta</i></a></li>
+                <li><a href="#"><i class="fa-solid fa-cart-shopping">Mi carrito</i></a></li>
+            </ul>
+
+        </div>
+
+        <nav>
+
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">PRODUCTOS</a></li>
+                <li><a href="#">CONTACTO</a></li>
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <main class="main-login">
+        <h3 class="login-title">INICIAR SESIÓN</h3>
+    
+        <form class="login-form" action="/login" method="GET">
+    
+            <div class="form-div">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+    
+            <div class="form-div">
+                <label for="password" class="form-label">Contraseña</label>
+                <input type="password" name="password" id="password" required>
+            </div>
+    
+            <div class="form-buttons">
+                <button type="submit" class="submit-button">INGRESAR</button>
+            </div>
+    
+        </form>
+    
+        <h2>Recuperar contraseña</h2>
+        <h2>No posee cuenta? <a href="/register"> REGISTRARSE</a></h2>
+    </main>
+
+    <footer>
+
+        <div class="top-footer">
+            <ul>
+                <p>Institucional</p>
+                <li><a href="#">Quienes somos</a></li>
+                <li><a href="#">Historia</a></li>
+                <li><a href="#">Relaciones institucionales</a></li>
+            </ul>
+
+            <ul>
+                <p>Ayuda</p>
+                <li><a href="#">Ayuda con tu compra</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Descargar certificados de calidad</a></li>
+            </ul>
+
+            <ul>
+                <p>Redes sociales</p>
+                <li><a href="#"><i class="fa-brands fa-trello"></i>Trello</a></li>
+                <li><a href="#"><i class="fa-brands fa-github"></i>Github</a></li>
+                <li><a href="#"><i class="fa-brands fa-kickstarter"></i>Heroku</a></li>
+            </ul>
+        </div>
+
+        <div class="copyright">
+            <p>© 2022 AKME SAFETY PRODUCTS S.A. - Todos los derechos reservados</p>
+        </div>
+
+    </footer>
+    
+</body>
+</html>
