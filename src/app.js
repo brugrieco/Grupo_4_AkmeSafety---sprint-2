@@ -9,6 +9,9 @@ const app = express()
 const viewsPath = path.join(__dirname, 'views')
 const publicPath = path.join(__dirname, 'public')
 
+// Acá falta la configuración de nuestra app para poder usar los template engine...
+app.set('view engine', 'ejs');
+
 //Agregar el middleware para configurar la carpeta de archivos estáticos
 app.use(express.static(publicPath));
 
