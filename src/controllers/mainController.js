@@ -1,31 +1,23 @@
-const platos = require('../database/products');
-
-/*
-const about = require('../database/about');
-*/
+const products = require('../database/products.js');
 
 const mainController = {
 
-    home: (req, res) => res.render('home', {
-        products //es igual a products: products.
-    }),
-
-    productDetail: (req, res) => {
-        
-        const id = Nombre(req.params.id)
-
-        const producto = producto.find(producto => producto.id === id)
-
-        res.render('productDetail', {
-            producto: producto
-        })
-
+    index (req, res){
+        res.render('index', {
+        products,
+        });
     },
 
-    carritoCompras: (req, res) => {
-        
-    }
+    productDetail(req, res){
 
+        const id = Number(req.params.id)
+
+        const product = products.find(product => product.id === id)
+
+        res.render ('products/productDetail', {
+            product
+        })
+    }
 }
 
 module.exports = mainController;

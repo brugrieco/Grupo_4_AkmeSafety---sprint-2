@@ -1,39 +1,30 @@
 //Requerir express y path
 const express = require('express')
-const path = require('path')
 
 //Guardar en una constante app la funcionalidad de express()
 const app = express()
 
-//Definir las rutas para los archivos estáticos (públicos) y otra para las vistas
-const viewsPath = path.join(__dirname, 'views')
-const publicPath = path.join(__dirname, 'public')
+//Definir el puerto en el que se va a levantar el servidor
+const port = 3000 || process.env.PORT
+
+const path = require('path')
+
+const mainRouter = require('./routes/mainRouter.js');
+
+//Agregar el middleware para configurar la carpeta de archivos estáticos
+app.use(express.static(path.join(__dirname, '../public')))
 
 // Acá falta la configuración de nuestra app para poder usar los template engine...
 app.set('view engine', 'ejs');
 
-//Agregar el middleware para configurar la carpeta de archivos estáticos
-app.use(express.static(publicPath));
+app.set('views', path.join(__dirname, 'views'))
 
-//Definir la ruta que responda a GET '/' con la vista home.html
-app.get('/', (req, res) => res.sendFile(path.join(viewsPath, 'home.html')));
+app.use('/', mainRouter)
 
-//Definir la ruta que responda a GET '/' con la vista login.html
-app.get('/login', (req, res) => res.sendFile(path.join(viewsPath, 'login.html')));
+app.use('/register', mainRouter)
 
-//Definir la ruta que responda a GET '/' con la vista register.html
-app.get('/register', (req, res) => res.sendFile(path.join(viewsPath, 'register.html')));
+app.use('/login', mainRouter)
 
-//Definir la ruta que responda a GET '/' con la vista productDetail.html
-app.get('/productDetail', (req, res) => res.sendFile(path.join(viewsPath, 'productDetail.html')));
+app.use('/carritoCompras', mainRouter)
 
-//Definir la ruta que responda a GET '/' con la vista carritoCompras.html
-app.get('/carritoCompras', (req, res) => res.sendFile(path.join(viewsPath, 'carritoCompras.html')));
-
-//Definir el puerto en el que se va a levantar el servidor
-const port = process.env.PORT || 3000
-
-//Levantar el servidor con app.listen(port)
-app.listen(port, () => {
-    console.log('servidor corriendo en el puerto ' + port);
-})
+app.listen(port, () => console.log(`servidor funcionando en el puerto ${port}! `))
