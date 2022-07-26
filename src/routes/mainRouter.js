@@ -15,4 +15,6 @@ router.get('/register', othersController.register)
 
 router.get('/carritoCompras', othersController.carritoCompras)
 
+router.get('/productEdit/:id', mainController.productEdit)
+
 module.exports = router;

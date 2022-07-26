@@ -27,4 +27,6 @@ app.use('/login', mainRouter)
 
 app.use('/carritoCompras', mainRouter)
 
+/* app.use('/productEdit', mainRouter) */
+
 app.listen(port, () => console.log(`servidor funcionando en el puerto ${port}! `))

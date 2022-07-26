@@ -17,6 +17,18 @@ const mainController = {
         res.render ('products/productDetail', {
             product
         })
+    }, 
+
+    productEdit (req, res){
+
+        const id = Number(req.params.id)
+
+        const product = products.find(product => product.id === id)
+
+        res.render ('products/productEdit', {
+            product
+        })
+        
     }
 }
 
