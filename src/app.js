@@ -5,7 +5,7 @@ const express = require('express')
 const app = express()
 
 //Definir el puerto en el que se va a levantar el servidor
-const port = 3000 || process.env.PORT
+const port = process.env.PORT || 3000
 
 const path = require('path')
 
